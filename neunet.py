@@ -35,4 +35,5 @@ def residual_net():
     # convnet.observe_salience(batch_size=1, n_channel=3, num_test=10, epoch=2)
     # convnet.observe_hidden_distribution(batch_size=128, n_channel=3, num_test=1, epoch=980)
 
-residual_net()
+# residual_net()
+basic_cnn()

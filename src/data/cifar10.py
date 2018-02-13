@@ -6,6 +6,11 @@ import matplotlib.pyplot as plt
 import platform
 import cv2
 
+import sys
+
+# # reload(sys)
+# sys.setdefaultencoding('utf8')
+
 
 class Corpus:
     
@@ -30,7 +35,7 @@ class Corpus:
                 if 'Windows' in platform.platform():
                     cifar10 = pickle.load(fo, encoding='bytes')
                 elif 'Linux' in platform.platform():
-                    cifar10 = pickle.load(fo)
+                    cifar10 = pickle.load(fo,encoding='bytes')
             for i in range(len(cifar10[b"labels"])):
                 image = numpy.reshape(cifar10[b"data"][i], (3, 32, 32))
                 image = numpy.transpose(image, (1, 2, 0))
@@ -47,7 +52,7 @@ class Corpus:
                 if 'Windows' in platform.platform():
                     cifar10 = pickle.load(fo, encoding='bytes')
                 elif 'Linux' in platform.platform():
-                    cifar10 = pickle.load(fo)
+                    cifar10 = pickle.load(fo,encoding='bytes')
             for i in range(len(cifar10[b"labels"])):
                 image = numpy.reshape(cifar10[b"data"][i], (3, 32, 32))
                 image = numpy.transpose(image, (1, 2, 0))
