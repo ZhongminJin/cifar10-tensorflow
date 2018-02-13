@@ -84,7 +84,7 @@ class ConvNet():
         correct_prediction = tf.equal(self.labels, tf.argmax(logits, 1))
         self.accuracy = tf.reduce_mean(tf.cast(correct_prediction, 'float'))
         
-    def train(self, dataloader, backup_path, n_epoch=5, batch_size=20):
+    def train(self, dataloader, backup_path, n_epoch=5, batch_size=128):
         # 构建会话
         # gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.45)
         # self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
@@ -99,11 +99,16 @@ class ConvNet():
         for epoch in range(0, n_epoch+1):
             # 数据增强   # disable this later , too heavy too run
             train_images = dataloader.data_augmentation(dataloader.train_images, mode='train',
-                flip=True, crop=True, crop_shape=(24,24,3), whiten=True, noise=False)
+                flip=False, crop=True, crop_shape=(24,24,3), whiten=False, noise=False)
             train_labels = dataloader.train_labels
             valid_images = dataloader.data_augmentation(dataloader.valid_images, mode='test',
-                flip=False, crop=True, crop_shape=(24,24,3), whiten=True, noise=False)
+                flip=False, crop=True, crop_shape=(24,24,3), whiten=False, noise=False)
             valid_labels = dataloader.valid_labels
+
+            # train_images=dataloader.train_images
+            # train_labels=dataloader.train_labels
+            # valid_images=dataloader.valid_images
+            # valid_labels=dataloader.valid_labels
             
             # 开始本轮的训练，并计算目标函数值
             train_loss = 0.0
