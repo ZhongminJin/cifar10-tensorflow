@@ -78,16 +78,17 @@ class ConvNet():
                                      lambda: tf.constant(0.001),
                                      lambda: tf.constant(0.0001)))
         self.optimizer = tf.train.AdamOptimizer(learning_rate=lr).minimize(
-            self.avg_loss, global_step=self.global_step)
+            self.avg_loss, global_step=self.global_step)  # learn how to use self.global_step
         
         # 观察值
         correct_prediction = tf.equal(self.labels, tf.argmax(logits, 1))
         self.accuracy = tf.reduce_mean(tf.cast(correct_prediction, 'float'))
         
-    def train(self, dataloader, backup_path, n_epoch=5, batch_size=128):
+    def train(self, dataloader, backup_path, n_epoch=5, batch_size=20):
         # 构建会话
-        gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.45)
-        self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+        # gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.45)
+        # self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+        self.sess=tf.Session()
         # 模型保存器
         self.saver = tf.train.Saver(
             var_list=tf.global_variables(), write_version=tf.train.SaverDef.V2, 
@@ -96,7 +97,7 @@ class ConvNet():
         self.sess.run(tf.global_variables_initializer())
         # 模型训练
         for epoch in range(0, n_epoch+1):
-            # 数据增强
+            # 数据增强   # disable this later , too heavy too run
             train_images = dataloader.data_augmentation(dataloader.train_images, mode='train',
                 flip=True, crop=True, crop_shape=(24,24,3), whiten=True, noise=False)
             train_labels = dataloader.train_labels
@@ -106,7 +107,7 @@ class ConvNet():
             
             # 开始本轮的训练，并计算目标函数值
             train_loss = 0.0
-            for i in range(0, dataloader.n_train, batch_size):
+            for i in range(0, dataloader.n_train, batch_size): # here implem the batch traing
                 batch_images = train_images[i: i+batch_size]
                 batch_labels = train_labels[i: i+batch_size]
                 [_, avg_loss, iteration] = self.sess.run(
