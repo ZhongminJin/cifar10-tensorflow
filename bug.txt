@@ -1,0 +1,253 @@
+zhongmin@zhongmin-ThinkPad-X220:~$ cd Documents/Github/
+zhongmin@zhongmin-ThinkPad-X220:~/Documents/Github$ ls
+cifar-10-cnn        lncode.py            movantftutorial
+cifar10-tensorflow  minigo               Reinforcement-learning-with-tensorflow
+kaggle_for_mercari  morvanwholetutorial  tensorflow_poems
+zhongmin@zhongmin-ThinkPad-X220:~/Documents/Github$ cd cifar10-tensorflow/
+zhongmin@zhongmin-ThinkPad-X220:~/Documents/Github/cifar10-tensorflow$ ls
+data  exps  neunet.py  others  readme.md  scripts  src
+zhongmin@zhongmin-ThinkPad-X220:~/Documents/Github/cifar10-tensorflow$ pythone neunet.py
+No command 'pythone' found, did you mean:
+ Command 'python3' from package 'python3-minimal' (main)
+ Command 'pytone' from package 'pytone' (universe)
+ Command 'python' from package 'python3' (main)
+ Command 'python' from package 'python-minimal' (main)
+ Command 'python2' from package 'python-minimal' (main)
+pythone: command not found
+zhongmin@zhongmin-ThinkPad-X220:~/Documents/Github/cifar10-tensorflow$ python3 neunet.py
+2018-02-13 00:04:49.983508: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:04:49.983548: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:04:49.983559: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:04:49.998564: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+2018-02-13 00:04:49.998624: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:158] retrieving CUDA diagnostic information for host: zhongmin-ThinkPad-X220
+2018-02-13 00:04:49.998639: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:165] hostname: zhongmin-ThinkPad-X220
+2018-02-13 00:04:49.998728: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:189] libcuda reported version is: 384.111.0
+2018-02-13 00:04:49.998773: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:369] driver version file contents: """NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.111  Tue Dec 19 23:51:45 PST 2017
+GCC version:  gcc version 7.2.0 (Ubuntu 7.2.0-8ubuntu3)
+"""
+2018-02-13 00:04:49.998801: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:193] kernel reported version is: 384.111.0
+2018-02-13 00:04:49.998813: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:300] kernel version seems to match DSO: 384.111.0
+^CTraceback (most recent call last):
+  File "neunet.py", line 39, in <module>
+    basic_cnn()
+  File "neunet.py", line 15, in basic_cnn
+    convnet.train(dataloader=cifar10, backup_path='backup/cifar10-v14/', batch_size=128, n_epoch=500)
+  File "/home/zhongmin/Documents/Github/cifar10-tensorflow/src/model/basic_cnn.py", line 116, in train
+    self.keep_prob: 0.5})
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 895, in run
+    run_metadata_ptr)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1124, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1321, in _do_run
+    options, run_metadata)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1327, in _do_call
+    return fn(*args)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1306, in _run_fn
+    status, run_metadata)
+KeyboardInterrupt
+zhongmin@zhongmin-ThinkPad-X220:~/Documents/Github/cifar10-tensorflow$ python3 neunet.py
+2018-02-13 00:18:30.459115: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:18:30.459151: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:18:30.459162: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:18:30.478212: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+2018-02-13 00:18:30.478316: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:158] retrieving CUDA diagnostic information for host: zhongmin-ThinkPad-X220
+2018-02-13 00:18:30.478341: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:165] hostname: zhongmin-ThinkPad-X220
+2018-02-13 00:18:30.478468: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:189] libcuda reported version is: 384.111.0
+2018-02-13 00:18:30.478556: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:369] driver version file contents: """NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.111  Tue Dec 19 23:51:45 PST 2017
+GCC version:  gcc version 7.2.0 (Ubuntu 7.2.0-8ubuntu3)
+"""
+2018-02-13 00:18:30.478627: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:193] kernel reported version is: 384.111.0
+2018-02-13 00:18:30.478665: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:300] kernel version seems to match DSO: 384.111.0
+^CTraceback (most recent call last):
+  File "neunet.py", line 39, in <module>
+    basic_cnn()
+  File "neunet.py", line 15, in basic_cnn
+    convnet.train(dataloader=cifar10, backup_path='backup/cifar10-v14/', batch_size=128, n_epoch=500)
+  File "/home/zhongmin/Documents/Github/cifar10-tensorflow/src/model/basic_cnn.py", line 116, in train
+    self.keep_prob: 0.5})
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 895, in run
+    run_metadata_ptr)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1124, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1321, in _do_run
+    options, run_metadata)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1327, in _do_call
+    return fn(*args)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1306, in _run_fn
+    status, run_metadata)
+KeyboardInterrupt
+zhongmin@zhongmin-ThinkPad-X220:~/Documents/Github/cifar10-tensorflow$ python3 neunet.py
+Traceback (most recent call last):
+  File "neunet.py", line 39, in <module>
+    basic_cnn()
+  File "neunet.py", line 15, in basic_cnn
+    convnet.train(dataloader=cifar10, backup_path='backup/cifar10-v14/', batch_size=128, n_epoch=500)
+  File "/home/zhongmin/Documents/Github/cifar10-tensorflow/src/model/basic_cnn.py", line 90, in train
+    self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+NameError: name 'gpu_options' is not defined
+zhongmin@zhongmin-ThinkPad-X220:~/Documents/Github/cifar10-tensorflow$ python3 neunet.py
+2018-02-13 00:30:21.948327: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:30:21.948366: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:30:21.948388: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:30:21.956397: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+2018-02-13 00:30:21.956466: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:158] retrieving CUDA diagnostic information for host: zhongmin-ThinkPad-X220
+2018-02-13 00:30:21.956484: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:165] hostname: zhongmin-ThinkPad-X220
+2018-02-13 00:30:21.956561: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:189] libcuda reported version is: 384.111.0
+2018-02-13 00:30:21.956601: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:369] driver version file contents: """NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.111  Tue Dec 19 23:51:45 PST 2017
+GCC version:  gcc version 7.2.0 (Ubuntu 7.2.0-8ubuntu3)
+"""
+2018-02-13 00:30:21.956634: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:193] kernel reported version is: 384.111.0
+2018-02-13 00:30:21.956651: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:300] kernel version seems to match DSO: 384.111.0
+^CTraceback (most recent call last):
+  File "neunet.py", line 39, in <module>
+    basic_cnn()
+  File "neunet.py", line 15, in basic_cnn
+    convnet.train(dataloader=cifar10, backup_path='backup/cifar10-v14/', batch_size=128, n_epoch=500)
+  File "/home/zhongmin/Documents/Github/cifar10-tensorflow/src/model/basic_cnn.py", line 117, in train
+    self.keep_prob: 0.5})
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 895, in run
+    run_metadata_ptr)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1124, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1321, in _do_run
+    options, run_metadata)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1327, in _do_call
+    return fn(*args)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1306, in _run_fn
+    status, run_metadata)
+KeyboardInterrupt
+zhongmin@zhongmin-ThinkPad-X220:~/Documents/Github/cifar10-tensorflow$ python3 neunet.py
+2018-02-13 00:41:23.216150: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:41:23.216187: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:41:23.216198: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:41:23.224797: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+2018-02-13 00:41:23.224848: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:158] retrieving CUDA diagnostic information for host: zhongmin-ThinkPad-X220
+2018-02-13 00:41:23.224861: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:165] hostname: zhongmin-ThinkPad-X220
+2018-02-13 00:41:23.224924: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:189] libcuda reported version is: 384.111.0
+2018-02-13 00:41:23.224956: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:369] driver version file contents: """NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.111  Tue Dec 19 23:51:45 PST 2017
+GCC version:  gcc version 7.2.0 (Ubuntu 7.2.0-8ubuntu3)
+"""
+2018-02-13 00:41:23.224980: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:193] kernel reported version is: 384.111.0
+2018-02-13 00:41:23.224992: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:300] kernel version seems to match DSO: 384.111.0
+Traceback (most recent call last):
+  File "neunet.py", line 39, in <module>
+    basic_cnn()
+  File "neunet.py", line 15, in basic_cnn
+    convnet.train(dataloader=cifar10, backup_path='backup/cifar10-v14/', batch_size=128, n_epoch=500)
+  File "/home/zhongmin/Documents/Github/cifar10-tensorflow/src/model/basic_cnn.py", line 122, in train
+    self.keep_prob: 0.5})
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 895, in run
+    run_metadata_ptr)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1100, in _run
+    % (np_val.shape, subfeed_t.name, str(subfeed_t.get_shape())))
+ValueError: Cannot feed value of shape (128, 32, 32, 3) for Tensor 'images:0', which has shape '(?, 24, 24, 3)'
+zhongmin@zhongmin-ThinkPad-X220:~/Documents/Github/cifar10-tensorflow$ python3 neunet.py
+2018-02-13 00:42:12.849782: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:42:12.849821: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:42:12.849833: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:42:12.856720: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+2018-02-13 00:42:12.856780: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:158] retrieving CUDA diagnostic information for host: zhongmin-ThinkPad-X220
+2018-02-13 00:42:12.856798: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:165] hostname: zhongmin-ThinkPad-X220
+2018-02-13 00:42:12.856885: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:189] libcuda reported version is: 384.111.0
+2018-02-13 00:42:12.856922: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:369] driver version file contents: """NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.111  Tue Dec 19 23:51:45 PST 2017
+GCC version:  gcc version 7.2.0 (Ubuntu 7.2.0-8ubuntu3)
+"""
+2018-02-13 00:42:12.856961: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:193] kernel reported version is: 384.111.0
+2018-02-13 00:42:12.856979: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:300] kernel version seems to match DSO: 384.111.0
+Traceback (most recent call last):
+  File "neunet.py", line 39, in <module>
+    basic_cnn()
+  File "neunet.py", line 15, in basic_cnn
+    convnet.train(dataloader=cifar10, backup_path='backup/cifar10-v14/', batch_size=128, n_epoch=500)
+  File "/home/zhongmin/Documents/Github/cifar10-tensorflow/src/model/basic_cnn.py", line 122, in train
+    self.keep_prob: 0.5})
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 895, in run
+    run_metadata_ptr)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1100, in _run
+    % (np_val.shape, subfeed_t.name, str(subfeed_t.get_shape())))
+ValueError: Cannot feed value of shape (128, 32, 32, 3) for Tensor 'images:0', which has shape '(?, 24, 24, 3)'
+zhongmin@zhongmin-ThinkPad-X220:~/Documents/Github/cifar10-tensorflow$ python3 neunet.py
+2018-02-13 00:47:54.234035: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:47:54.234076: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:47:54.234099: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-13 00:47:54.241039: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+2018-02-13 00:47:54.241100: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:158] retrieving CUDA diagnostic information for host: zhongmin-ThinkPad-X220
+2018-02-13 00:47:54.241118: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:165] hostname: zhongmin-ThinkPad-X220
+2018-02-13 00:47:54.241193: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:189] libcuda reported version is: 384.111.0
+2018-02-13 00:47:54.241232: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:369] driver version file contents: """NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.111  Tue Dec 19 23:51:45 PST 2017
+GCC version:  gcc version 7.2.0 (Ubuntu 7.2.0-8ubuntu3)
+"""
+2018-02-13 00:47:54.241265: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:193] kernel reported version is: 384.111.0
+2018-02-13 00:47:54.241282: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:300] kernel version seems to match DSO: 384.111.0
+epoch{0}, iter[352], train loss: 231.551236, valid precision: 0.549600, valid loss: 164.091091
+2018-02-13 00:58:27.976220: W tensorflow/core/framework/op_kernel.cc:1192] Not found: backup/cifar10-v14
+Traceback (most recent call last):
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1327, in _do_call
+    return fn(*args)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1306, in _run_fn
+    status, run_metadata)
+  File "/home/zhongmin/anaconda3/lib/python3.6/contextlib.py", line 88, in __exit__
+    next(self.gen)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/errors_impl.py", line 466, in raise_exception_on_not_ok_status
+    pywrap_tensorflow.TF_GetCode(status))
+tensorflow.python.framework.errors_impl.NotFoundError: backup/cifar10-v14
+	 [[Node: save/SaveV2 = SaveV2[dtypes=[DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_INT32], _device="/job:localhost/replica:0/task:0/cpu:0"](_arg_save/Const_0_0, save/SaveV2/tensor_names, save/SaveV2/shape_and_slices, W_conv1, W_conv1/Adam, W_conv1/Adam_1, W_conv2, W_conv2/Adam, W_conv2/Adam_1, W_conv3, W_conv3/Adam, W_conv3/Adam_1, W_dense1, W_dense1/Adam, W_dense1/Adam_1, W_dense2, W_dense2/Adam, W_dense2/Adam_1, b_conv1, b_conv1/Adam, b_conv1/Adam_1, b_conv2, b_conv2/Adam, b_conv2/Adam_1, b_conv3, b_conv3/Adam, b_conv3/Adam_1, b_dense1, b_dense1/Adam, b_dense1/Adam_1, b_dense2, b_dense2/Adam, b_dense2/Adam_1, beta1_power, beta2_power, gamma_conv1, gamma_conv1/Adam, gamma_conv1/Adam_1, gamma_conv2, gamma_conv2/Adam, gamma_conv2/Adam_1, gamma_conv3, gamma_conv3/Adam, gamma_conv3/Adam_1, gamma_dense1, gamma_dense1/Adam, gamma_dense1/Adam_1, global_step)]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/training/saver.py", line 1474, in save
+    {self.saver_def.filename_tensor_name: checkpoint_file})
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 895, in run
+    run_metadata_ptr)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1124, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1321, in _do_run
+    options, run_metadata)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1340, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.NotFoundError: backup/cifar10-v14
+	 [[Node: save/SaveV2 = SaveV2[dtypes=[DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_INT32], _device="/job:localhost/replica:0/task:0/cpu:0"](_arg_save/Const_0_0, save/SaveV2/tensor_names, save/SaveV2/shape_and_slices, W_conv1, W_conv1/Adam, W_conv1/Adam_1, W_conv2, W_conv2/Adam, W_conv2/Adam_1, W_conv3, W_conv3/Adam, W_conv3/Adam_1, W_dense1, W_dense1/Adam, W_dense1/Adam_1, W_dense2, W_dense2/Adam, W_dense2/Adam_1, b_conv1, b_conv1/Adam, b_conv1/Adam_1, b_conv2, b_conv2/Adam, b_conv2/Adam_1, b_conv3, b_conv3/Adam, b_conv3/Adam_1, b_dense1, b_dense1/Adam, b_dense1/Adam_1, b_dense2, b_dense2/Adam, b_dense2/Adam_1, beta1_power, beta2_power, gamma_conv1, gamma_conv1/Adam, gamma_conv1/Adam_1, gamma_conv2, gamma_conv2/Adam, gamma_conv2/Adam_1, gamma_conv3, gamma_conv3/Adam, gamma_conv3/Adam_1, gamma_dense1, gamma_dense1/Adam, gamma_dense1/Adam_1, global_step)]]
+
+Caused by op 'save/SaveV2', defined at:
+  File "neunet.py", line 39, in <module>
+    basic_cnn()
+  File "neunet.py", line 15, in basic_cnn
+    convnet.train(dataloader=cifar10, backup_path='backup/cifar10-v14/', batch_size=128, n_epoch=500)
+  File "/home/zhongmin/Documents/Github/cifar10-tensorflow/src/model/basic_cnn.py", line 95, in train
+    max_to_keep=10)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/training/saver.py", line 1140, in __init__
+    self.build()
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/training/saver.py", line 1172, in build
+    filename=self._filename)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/training/saver.py", line 686, in build
+    save_tensor = self._AddSaveOps(filename_tensor, saveables)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/training/saver.py", line 276, in _AddSaveOps
+    save = self.save_op(filename_tensor, saveables)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/training/saver.py", line 219, in save_op
+    tensors)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/ops/gen_io_ops.py", line 768, in save_v2
+    tensors=tensors, name=name)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py", line 767, in apply_op
+    op_def=op_def)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 2630, in create_op
+    original_op=self._default_original_op, op_def=op_def)
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 1204, in __init__
+    self._traceback = self._graph._extract_stack()  # pylint: disable=protected-access
+
+NotFoundError (see above for traceback): backup/cifar10-v14
+	 [[Node: save/SaveV2 = SaveV2[dtypes=[DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_FLOAT, DT_INT32], _device="/job:localhost/replica:0/task:0/cpu:0"](_arg_save/Const_0_0, save/SaveV2/tensor_names, save/SaveV2/shape_and_slices, W_conv1, W_conv1/Adam, W_conv1/Adam_1, W_conv2, W_conv2/Adam, W_conv2/Adam_1, W_conv3, W_conv3/Adam, W_conv3/Adam_1, W_dense1, W_dense1/Adam, W_dense1/Adam_1, W_dense2, W_dense2/Adam, W_dense2/Adam_1, b_conv1, b_conv1/Adam, b_conv1/Adam_1, b_conv2, b_conv2/Adam, b_conv2/Adam_1, b_conv3, b_conv3/Adam, b_conv3/Adam_1, b_dense1, b_dense1/Adam, b_dense1/Adam_1, b_dense2, b_dense2/Adam, b_dense2/Adam_1, beta1_power, beta2_power, gamma_conv1, gamma_conv1/Adam, gamma_conv1/Adam_1, gamma_conv2, gamma_conv2/Adam, gamma_conv2/Adam_1, gamma_conv3, gamma_conv3/Adam, gamma_conv3/Adam_1, gamma_dense1, gamma_dense1/Adam, gamma_dense1/Adam_1, global_step)]]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "neunet.py", line 39, in <module>
+    basic_cnn()
+  File "neunet.py", line 15, in basic_cnn
+    convnet.train(dataloader=cifar10, backup_path='backup/cifar10-v14/', batch_size=128, n_epoch=500)
+  File "/home/zhongmin/Documents/Github/cifar10-tensorflow/src/model/basic_cnn.py", line 151, in train
+    self.sess, os.path.join(backup_path, 'model_%d.ckpt' % (epoch)))
+  File "/home/zhongmin/anaconda3/lib/python3.6/site-packages/tensorflow/python/training/saver.py", line 1490, in save
+    raise exc
+ValueError: Parent directory of backup/cifar10-v14/model_0.ckpt doesn't exist, can't save.
